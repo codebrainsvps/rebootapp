@@ -1,1 +1,25 @@
-java code 
+package com.codebrains.exception;
+import java.io.IOException;
+import java.util.Scanner;
+public class ThrowsDemo {
+    public static void main(String args[]) {
+         Scanner scan = new Scanner(System.in);
+        System.out.print("Nter Two Numbers");
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+      try{
+              doDivision(a,b);//12,3   4,0 possibility is there
+      }catch(ArithmeticException ae)
+      {
+          //System.out.println("dont 0 for sec value");
+        //ae.printStackTrace();
+        System.out.println(ae.getMessage());
+      }
+    }
+        public static void doDivision(int x, int y)throws ArithmeticException{
+        int div=x/y;
+        System.out.print("Division ="+div);
+    }
+}
+
+
